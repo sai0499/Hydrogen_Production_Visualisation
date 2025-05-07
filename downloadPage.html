@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEM Visualization Installer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #448fff;
+      --accent: #F2A365;
+      --bg-light: #F7F9FC;
+      --bg-dark: #1A1F36;
+      --text-light: #FFFFFF;
+      --text-dark: #333333;
+      --radius: 12px;
+      --transition: 0.3s;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.125rem;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 900px;
+      margin: -2rem auto 2rem;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    /* Download section override */
+    .download-section {
+      background: transparent;
+      box-shadow: none;
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--text-light);
+      padding: 0.75rem 1.75rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      z-index: 10;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    section:not(.download-section) {
+      background: var(--text-light);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      animation: fadeIn 0.8s ease-out;
+    }
+    section h2 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .team .card, .supervisors .card {
+      background: var(--bg-light);
+      border: 1px solid #E0E5EC;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .team .card:hover, .supervisors .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+    }
+    .card p { font-size: 0.95rem; color: #555555; }
+    @media (min-width: 600px) {
+      .team .grid, .supervisors .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PEM Visualization</h1>
+    <p>Installer Download • Developed by Team Flotron</p>
+  </header>
+  <main>
+    <section class="download-section">
+      <a id="downloadBtn" class="btn" href="https://drive.google.com/file/d/16qplQyY4akvctGRkLdn2317JjhT5CGGh/view?usp=drive_link" download>Download Installer</a>
+    </section>
+
+    <section>
+      <h2>About the App</h2>
+      <p>PEM Visualization brings proton exchange membrane processes to life with interactive 3D animations and in-depth theoretical insights. Built to support the Visualization of Process Engineering Applications course, it empowers learners to explore complex process steps intuitively.</p>
+    </section>
+
+    <section>
+      <h2>Course Project</h2>
+      <p>This project was completed for the "Visualization of Process Engineering Applications" course, integrating simulation, 3D modelling, and interactive elements to reinforce engineering concepts.</p>
+    </section>
+
+    <section class="supervisors">
+      <h2>Supervisors</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Dr.-Ing. Nicole Vorhauer-Huget</h3>
+          <p>Postdoc at Otto von Guericke University Magdeburg. Expert in thermal process engineering and drying technologies. Group Leader for team researching on Transport in Porous Media </p>
+        </div>
+        <div class="card">
+          <h3>Dr.-Ing. David Broneske</h3>
+          <p>Research Associate at OVGU Magdeburg, specializing in high-performance database systems and GPU-accelerated data management.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team">
+      <h2>Team Flotron</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Lokesh Gottapu</h3>
+          <p>Chemical Engineer specializing in membrane technologies. Alumnus of Anil Neerukonda Institute of Technology & Sciences.</p>
+        </div>
+        <div class="card">
+          <h3>Sai Teja Dampanaboina</h3>
+          <p>Software Engineer with a passion for math & computing. Currently pursuing an M.Sc. in Computer Science.</p>
+        </div>
+        <div class="card">
+          <h3>Abdul Syed Basit</h3>
+          <p>Chemical Engineer expert in process design & simulation, focusing on unit operation optimization.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      document.getElementById('downloadBtn').textContent = 'Preparing...';
+      setTimeout(() => document.getElementById('downloadBtn').textContent = 'Enjoy PEM Visualization!', 2000);
+    });
+  </script>
+</body>
+</html>
